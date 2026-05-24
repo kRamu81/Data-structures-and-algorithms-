@@ -40,9 +40,11 @@ class Solution {
                 strength += 5;
             }
         }
+       return strength;
+    }
+}
 ```
 - Time Complexity : 0(n)
 - space complexity : 0(1)
-        return strength;
-    }
-}
+        
+<img width="232" height="253" alt="image" src="https://github.com/user-attachments/assets/525e9a25-c033-4cd0-97c4-f6f00a56cd6c" />
