@@ -13,10 +13,10 @@ class Solution {
 }
 ```
 Approach : 
-nums = [2,3,1,1,4]
-from index 0 (2) move 2 jumps 3 ,1
-from index 1 (3) move 3 jumps 1,1,4
-it satifies the end then return result true
+ * nums = [2,3,1,1,4]
+ * from index 0 (2) move 2 jumps 3 ,1
+ * from index 1 (3) move 3 jumps 1,1,4
+ * it satifies the end then return result true
 
 condition i > jump return false
 | i | nums[i] | jump         | reachable?  |
