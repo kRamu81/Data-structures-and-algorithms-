@@ -156,3 +156,6 @@ class Solution {
 ```
  - Time Complexity : 0(n)
  - space complexity : 0(n)
+
+ - <img width="228" height="258" alt="image" src="https://github.com/user-attachments/assets/34ec308d-3973-47c7-9789-c20241d1e95e" />
+
