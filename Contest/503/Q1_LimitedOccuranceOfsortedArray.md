@@ -48,3 +48,7 @@ class Solution {
         return ans;
     }
 }
+```
+ - Time & space Complexity : 0(n) & 0(1)
+
+   <img width="232" height="253" alt="image" src="https://github.com/user-attachments/assets/8e8b923f-060d-4239-9a24-7a99fc12aa04" />
