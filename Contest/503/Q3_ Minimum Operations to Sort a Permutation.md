@@ -28,7 +28,78 @@ we verify whether the array follows:
 0,1,2,3...
 ```
 If not possible in both cases, return -1.
-<img width="314" height="357" alt="image" src="https://github.com/user-attachments/assets/7be36663-3e7f-491b-8c3b-b1d641ff6d8c" />
+
+Here is a step-by-step mathematical dry-run execution using the exact example input nums = [1, 2, 3, 4, 0] ($n = 5$), breaking down exactly how your corrected logic computes the optimal answer.
+------------------------------
+## 🏁 Step-by-Step Execution Matrix## 1. Setup & Variables
+
+* nums = [1, 2, 3, 4, 0]
+* ans = Integer.MAX_VALUE
+
+------------------------------
+## 2. Block 0: Normal Array Check
+We evaluate the array as it is: [1, 2, 3, 4, 0].
+
+* Locating '0': Found at pos = 4.
+* Sequential Order Check: We check elements moving cyclically right from index 4:
+* Index 4: arr[4] == 0 (Valid)
+   * Index 0: arr[0] == 1 (Valid)
+   * Index 1: arr[1] == 2 (Valid)
+   * Index 2: arr[2] == 3 (Valid)
+   * Index 3: arr[3] == 4 (Valid)
+* Result: The sequence is sequentially valid! normal = 4.
+
+## Cost Paths Calculated:
+
+* path1 (Shift Left Only): normal = 4 operations.
+* path2 (Double Reverse Sandwich): 2 + (5 - 4) % 5 = 2 + 1 = 3 operations.
+* Update Global Minimum: ans = Math.min(MAX_VALUE, Math.min(4, 3)) $\rightarrow$ ans = 3.
+
+------------------------------
+## 3. Block 1: Generate Reversed Array
+
+* rev = [0, 4, 3, 2, 1]
+
+------------------------------
+## 4. Block 2: Reversed Array Check
+We evaluate the reversed array: [0, 4, 3, 2, 1].
+
+* Locating '0': Found at pos = 0.
+* Sequential Order Check: We check elements moving cyclically right from index 0:
+* Index 0: arr[0] == 0 (Valid)
+   * Index 1: arr[1] == 4 $\rightarrow$ Expected 1! ❌ (Fails forward sequence check).
+* Result: rotate = -1. This block skips updating the variables.
+
+------------------------------
+## 5. Final Return Execution
+
+* ans remains 3.
+* return ans == Integer.MAX_VALUE ? -1 : ans; $\rightarrow$ Returns 3.
+
+------------------------------
+##  Visualizing the Paths
+Here is a high-level visual representation layout showing how the two options inside the normal block are evaluated to find the absolute minimum operation path:
+
+                  INPUT: [1, 2, 3, 4, 0]
+                            │
+               ┌────────────┴────────────┐
+               ▼                         ▼
+         [ check(nums) ]           [ check(rev) ]
+         Returns pos = 4           Returns pos = -1
+               │                         │
+      ┌────────┴────────┐                ▼
+      ▼                 ▼             (Skipped)
+   Path 1            Path 2
+ (Shift Only)   (Double Reverse)
+    Cost: 4        Cost: 2 + (5 - 4)
+                        = 3
+      │                 │
+      └────────┬────────┘
+               ▼
+         Math.min(4, 3) 
+               │
+               ▼
+         FINAL ANS = 3 (Optimal 🎉)
 
 
 ```java
