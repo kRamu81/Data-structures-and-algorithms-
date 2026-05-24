@@ -29,7 +29,7 @@ we verify whether the array follows:
 ```
 If not possible in both cases, return -1.
 
-Here is a step-by-step mathematical dry-run execution using the exact example input nums = [1, 2, 3, 4, 0] ($n = 5$), breaking down exactly how your corrected logic computes the optimal answer.
+## Here is a step-by-step mathematical dry-run execution using the exact example input nums = [1, 2, 3, 4, 0] ($n = 5$), breaking down exactly how your corrected logic computes the optimal answer.
 ------------------------------
 ## 🏁 Step-by-Step Execution Matrix## 1. Setup & Variables
 
@@ -79,7 +79,7 @@ We evaluate the reversed array: [0, 4, 3, 2, 1].
 ------------------------------
 ##  Visualizing the Paths
 Here is a high-level visual representation layout showing how the two options inside the normal block are evaluated to find the absolute minimum operation path:
-
+```
                   INPUT: [1, 2, 3, 4, 0]
                             │
                ┌────────────┴────────────┐
@@ -100,7 +100,7 @@ Here is a high-level visual representation layout showing how the two options in
                │
                ▼
          FINAL ANS = 3 (Optimal 🎉)
-
+```
 
 ```java
 class Solution {
